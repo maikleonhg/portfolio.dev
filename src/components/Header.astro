@@ -1,0 +1,84 @@
+<header class="flex justify-between items-center py-3 w-full px-6">
+    <!-- Logo -->
+    <img 
+      class="rounded-full w-12 h-12" 
+      src="https://avatars.githubusercontent.com/u/116666422?v=4" 
+      alt="Astro logo" />
+  
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="flex justify-center space-x-6 bg-violet-500/50 py-3 rounded-full border-2 border-blue-600/50 transition opacity-70">
+          <li>
+            <a href="/" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-115">Home</a>
+          </li>
+          <li>
+            <a href="/about" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">About</a>
+          </li>
+          <li>
+            <a href="/projects" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Projects</a>
+          </li>
+          <li>
+            <a href="/contact" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      
+    <!-- Dark/Light Mode Toggle -->
+    <button id="theme-toggle" class="text-2xl">
+      🌞
+    </button>
+  </header>
+  
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement;
+  
+    toggleButton.addEventListener('click', () => {
+      if (rootElement.classList.contains('dark')) {
+        rootElement.classList.remove('dark');
+        toggleButton.textContent = '🌞'; // Sun icon for light mode
+      } else {
+        rootElement.classList.add('dark');
+        toggleButton.textContent = '🌜'; // Moon icon for dark mode
+      }
+    });
+  </script>
+  
+  <style is:global>
+    /* Global styles for dark and light modes */
+    :root {
+      --background-light: #f9fafb;
+      --background-dark: #1f2937;
+      --text-light: #111827;
+      --text-dark: #f9fafb;
+    }
+  
+    html {
+      background-color: var(--background-light);
+      color: var(--text-light);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    html.dark {
+      background-color: var(--background-dark);
+      color: var(--text-dark);
+    }
+  
+    /* Additional styling for header and menu */
+    header {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+  
+    nav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+  
