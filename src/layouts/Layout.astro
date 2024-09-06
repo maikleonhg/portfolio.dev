@@ -1,5 +1,7 @@
 ---
 import Header from '../components/Header.astro';
+import '@fontsource-variable/onest';
+import SocialIcon from '../components/SocialIcon.astro';
 
 interface Props {
 	title: string;
@@ -9,7 +11,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -20,43 +22,43 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Header />
+		<SocialIcon />
 		<slot />
 	</body>
 </html>
+
 <style is:global>
-	:root {
-		color-scheme: light dark;
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	body {
-		background: linear-gradient(135deg, #0f0513, #53375e, #a57e9c);
-		display: flex;
-		justify-content: center;
-		margin: 0;
-		padding: 0;
-		min-height: 100vh;
-	}
-</style>
+:root {
+  color-scheme: light dark;
+  --accent: 136, 58, 234;
+  --accent-light: 224, 204, 250;
+  --accent-dark: 49, 10, 101;
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+  --background-light: linear-gradient(135deg, #f5f5f5, #d1c4e9, #ede7f6); /* Fondo claro */
+  --background-dark: linear-gradient(135deg, #0f0513, #53375e, #bd81af); /* Fondo oscuro */
+}
+
+html {
+  font-family: "Onest Variable", system-ui, sans-serif;
+}
+
+body {
+  background: var(--background-light); /* Se aplica el fondo claro por defecto */
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Tema oscuro */
+.dark body {
+  background: var(--background-dark); /* Se aplica el fondo oscuro en el tema dark */
+}

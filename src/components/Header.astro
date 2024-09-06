@@ -1,4 +1,4 @@
-<header class="flex justify-between items-center py-3 w-full px-6">
+<header class="fixed top-0 flex justify-between items-center py-3 w-full px-6 mx-auto">
     <!-- Logo -->
     <img 
       class="rounded-full w-12 h-12" 
@@ -7,18 +7,18 @@
   
     <!-- Navigation Menu -->
     <nav>
-        <ul class="flex justify-center space-x-6 bg-violet-500/50 py-3 rounded-full border-2 border-blue-600/50 transition opacity-70">
+        <ul class="flex justify-center space-x-6 backdrop-blur-sm bg-[#53375e]/80 py-4 px-6 rounded-2xl border-1 border-gray transition-opacity">
           <li>
-            <a href="/" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-115">Home</a>
+            <a href="/" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-115">Home</a>
           </li>
           <li>
-            <a href="/about" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">About</a>
+            <a href="/about" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">About</a>
           </li>
           <li>
-            <a href="/projects" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Projects</a>
+            <a href="/projects" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Projects</a>
           </li>
           <li>
-            <a href="/contact" class="text-white/80 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Contact</a>
+            <a href="/contact" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Contact</a>
           </li>
         </ul>
       </nav>
@@ -36,13 +36,14 @@
     toggleButton.addEventListener('click', () => {
       if (rootElement.classList.contains('dark')) {
         rootElement.classList.remove('dark');
-        toggleButton.textContent = '🌞'; // Sun icon for light mode
+        toggleButton.textContent = '🌞'; // Icono de sol para el modo claro
       } else {
         rootElement.classList.add('dark');
-        toggleButton.textContent = '🌜'; // Moon icon for dark mode
+        toggleButton.textContent = '🌜'; // Icono de luna para el modo oscuro
       }
     });
   </script>
+  
   
   <style is:global>
     /* Global styles for dark and light modes */

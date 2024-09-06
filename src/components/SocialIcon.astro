@@ -1,0 +1,27 @@
+---
+import Github from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Instagram from "./icons/Instagram.astro";
+import CV from "./icons/CV.astro";
+---
+
+<div class="fixed left-8 bottom-1/4 flex flex-col space-y-7">
+    <a href="https://github.com/maikleonhg" target="_blank" class="group hover:text-gray-600 transition-transform duration-300">
+        <Github class="w-6 h-6 transform group-hover:scale-125" />
+    </a>
+    <a href="https://linkedin.com/in/miguel-leon-830a5b207" target="_blank" class="group hover:text-gray-600 transition-transform duration-300">
+        <Linkedin class="w-6 h-6 transform group-hover:scale-125" />
+    </a>
+    <a href="https://instagram.com/maikleonhg" target="_blank" class="group hover:text-gray-600 transition-transform duration-300">
+        <Instagram class="w-6 h-6 transform group-hover:scale-125" />
+    </a>
+    <a href="" target="_blank" class="group hover:text-gray-600 transition-transform duration-300">
+        <CV class="w-8 h-8 transform group-hover:scale-125" />
+    </a>
+</div>
+
+<style>
+  a:hover {
+    opacity: 0.7;
+  }
+</style>
