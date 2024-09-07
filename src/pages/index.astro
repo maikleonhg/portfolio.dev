@@ -1,47 +1,79 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
-import GithubIcon from '../components/icons/Github.astro';
-import Linkedin from '../components/icons/Linkedin.astro';
-import Instagram from '../components/icons/Instagram.astro';
+import MySkills from '../components/MySkills.astro';
+import Experience from '../components/Experience.astro';
+import AboutMe from '../components/AboutMe.astro';
+import Project from '../components/Projects.astro';
 ---
 
 <Layout title="Miguel Leon | Portfolio">
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-64">
-			<h1 class="text-5xl font-bold flex justify-center p-4">
-			Hi, I'm Miguel Leon. 👋 <div><Badge>🚀 Ready to Work</Badge></div>
-			</h1>
-			
-			<h2 class="flex justify-center text-lg px-10">
-			  I'm a passionate Software Developer and Engineer in Information Technologies, with a focus on building simple yet innovative digital solutions that solve real-world problems.
-			</h2>
+	  <section class="w-full lg:w-[740px] mx-auto py-64 fade-in-section">
+		<h1 class="text-5xl font-bold flex justify-center p-4">
+		  Hi, I'm Miguel Leon. 👋 <div><Badge>🚀 Ready to Work</Badge></div>
+		</h1>
+		
+		<h2 class="flex justify-center text-lg px-10">
+		  I'm a passionate Software Developer and Engineer in Information Technologies, with a focus on building simple yet innovative digital solutions that solve real-world problems.
+		</h2>
+	  </section>
+  
+	  <section class="w-full lg:w-[740px] mx-auto py-24  fade-in-section">
+		<AboutMe />
+	  </section>
 
-		</section>
-		<section class="w-full lg:w-[740px] mx-auto py-24">
-			<h1 class="text-4xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">About Me</h1>
-			<div>
-			<div class="bg-white dark:bg-gray-900 shadow-lg rounded-3xl p-8 lg:p-12">
-			  <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
-				I am a passionate individual driven by continuous learning and adaptability, excelling in various fields due to my multipotentiality. Self-taught from an early age, I have a strong interest in technology, with hands-on experience in full-stack web applications and data analysis. I am skilled in inventory management and administrative operations, with a proven ability to solve complex problems and work effectively within multidisciplinary teams.
-			  </p>
-			  <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-				In addition to my technical expertise, I thrive in collaborative environments and am always seeking new opportunities to grow and expand my skill set. My curiosity fuels my dedication to staying up-to-date with the latest industry trends, ensuring that I bring innovative solutions to any project I take on. Whether it’s coding, problem-solving, or learning a new tool, I embrace challenges and strive for excellence in everything I do.
-			  </p>
-			</div>
-			<div class="relative w-80 mx-auto mt-8">
-				<img src="https://res.cloudinary.com/dpmxvmf87/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1725581816/IMG-20240629-WA0061_aj8ilv.jpg" 
-					 alt="Miguel Leon" 
-					 class="rounded-3xl w-100 h-100 mx-auto relative z-10 shadow-lg" />
-				<div class="absolute inset-0 w-100 h-100 rounded-3xl bg-black opacity-45 blur-sm transform translate-x-4 translate-y-4"></div>
-			  </div>
-			</div>
-		  </section>
-		  <section class="w-full lg:w-[740px] mx-auto py-24">
-			<h1 class="text-4xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">My Skills</h1>
-			
-		  </section>
-		  
+	  <section class="w-full lg:w-[740px] mx-auto py-24 fade-in-section">
+		<Experience />
+	  </section>
+  
+	  <section class="w-full lg:w-[740px] mx-auto py-24 fade-in-section">
+		<h1 class="text-4xl font-semibold text-center mb-8 text-gray-800 dark:text-gray-200">My Skills</h1>
+		<div>
+		<MySkills />
+		</div>
+	  </section>
+
+	  <section class="w-full lg:w-[740px] mx-auto py-24 fade-in-section">
+			<Project />
+	  </section>
 	</main>
-</Layout>
+  </Layout>
+  
+  <script>
+	// Intersection Observer to reveal sections as they enter the viewport
+	document.addEventListener('DOMContentLoaded', () => {
+	  const observerOptions = {
+		threshold: 0.1,  // Trigger when 10% of the element is visible
+	  };
+  
+	  const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+		  if (entry.isIntersecting) {
+			entry.target.classList.add('fade-in-visible'); // Add class to trigger the animation
+			observer.unobserve(entry.target); // Stop observing once the animation has played
+		  }
+		});
+	  }, observerOptions);
+  
+	  // Observe each section with the "fade-in-section" class
+	  document.querySelectorAll('.fade-in-section').forEach(section => {
+		observer.observe(section);
+	  });
+	});
+  </script>
+  
+  <style>
+	/* Base styles for fade-in sections */
+	.fade-in-section {
+	  opacity: 0;
+	  transform: translateY(50px); /* Start 50px above */
+	  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	}
+  
+	/* Class to apply when the element becomes visible */
+	.fade-in-visible {
+	  opacity: 1;
+	  transform: translateY(0); /* Move to original position */
+	}
+  </style>

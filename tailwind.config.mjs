@@ -10,7 +10,6 @@ export default {
 		  'lg': '12px',
 		  'xl': '16px',
 		},
-		// Puedes extender otros temas aquí si es necesario
 	  },
 	},
 	plugins: [],
