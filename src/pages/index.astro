@@ -5,21 +5,44 @@ import MySkills from '../components/MySkills.astro';
 import Experience from '../components/Experience.astro';
 import AboutMe from '../components/AboutMe.astro';
 import Project from '../components/Projects.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Github from '../components/icons/Github.astro';
+import Linkedin from '../components/icons/Linkedin.astro';
+import Instagram from '../components/icons/Instagram.astro';
+import CV from '../components/icons/CV.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Miguel Leon | Portfolio">
 	<main>
-	  <section class="w-full lg:w-[740px] mx-auto py-64 fade-in-section">
+	  <section id="home" class="w-full lg:w-[740px] mx-auto py-64 fade-in-section">
 		<h1 class="text-5xl font-bold flex justify-center p-4">
 		  Hi, I'm Miguel Leon. 👋 <div><Badge>🚀 Ready to Work</Badge></div>
 		</h1>
 		
-		<h2 class="flex justify-center text-lg px-10">
+		<h2 class="flex justify-center text-lg px-10 py-3">
 		  I'm a passionate Software Developer and Engineer in Information Technologies, with a focus on building simple yet innovative digital solutions that solve real-world problems.
 		</h2>
+		<nav class="flex gap-x-2 justify-left px-8">
+					<SocialPill href="linkedin.com">
+						<Github class="size-6"/>
+						Github
+					</SocialPill>
+					<SocialPill href="linkedin.com">
+						<Linkedin class="size-6"/>
+						Linkedin
+					</SocialPill>
+					<SocialPill href="linkedin.com">
+						<Instagram class="size-6"/>
+						Instagram
+					</SocialPill>
+					<SocialPill href="linkedin.com">
+						<CV class="size-6"/>
+						Resume
+		</nav>
 	  </section>
   
-	  <section class="w-full lg:w-[740px] mx-auto py-24  fade-in-section">
+	  <section id="about" class="w-full lg:w-[740px] mx-auto py-24  fade-in-section">
 		<AboutMe />
 	  </section>
 
@@ -34,8 +57,11 @@ import Project from '../components/Projects.astro';
 		</div>
 	  </section>
 
-	  <section class="w-full lg:w-[740px] mx-auto py-24 fade-in-section">
+	  <section id="projects" class="w-full lg:w-[740px] mx-auto py-24 fade-in-section">
 			<Project />
+	  </section>
+	  <section id="contact" class="w-full lg:w-[740px] mx-auto py-24 fade-in-section justify-self-center">
+			<Footer />
 	  </section>
 	</main>
   </Layout>
