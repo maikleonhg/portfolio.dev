@@ -1,85 +1,122 @@
 <header class="fixed top-0 flex justify-between items-center py-3 w-full px-6 mx-auto backdrop-blur-sm z-50">
+  <!-- Logo -->
+  <img 
+    class="rounded-full w-12 h-12" 
+    src="https://avatars.githubusercontent.com/u/116666422?v=4" 
+    alt="Astro logo" />
 
-    <!-- Logo -->
-    <img 
-      class="rounded-full w-12 h-12" 
-      src="https://avatars.githubusercontent.com/u/116666422?v=4" 
-      alt="Astro logo" />
-  
-    <!-- Navigation Menu -->
-    <nav>
-        <ul class="flex justify-center space-x-6 backdrop-blur-sm bg-[#53375e]/80 py-4 px-6 rounded-2xl border-1 border-gray transition-opacity">
-          <li>
-            <a href="#home" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-gray hover:scale-115">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">About</a>
-          </li>
-          <li>
-            <a href="#projects" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Projects</a>
-          </li>
-          <li>
-            <a href="#contact" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Contact</a>
-          </li>
-        </ul>
-      </nav>
-      
-    <!-- Dark/Light Mode Toggle -->
-    <button id="theme-toggle" class="text-2xl">
-      🌞
-    </button>
-  </header>
-  
-  <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const rootElement = document.documentElement;
-  
-    toggleButton.addEventListener('click', () => {
-      if (rootElement.classList.contains('dark')) {
-        rootElement.classList.remove('dark');
-        toggleButton.textContent = '🌞'; // Icono de sol para el modo claro
-      } else {
-        rootElement.classList.add('dark');
-        toggleButton.textContent = '🌜'; // Icono de luna para el modo oscuro
-      }
-    });
-  </script>
-  
-  
-  <style is:global>
-    /* Global styles for dark and light modes */
-    :root {
-      --background-light: #f9fafb;
-      --background-dark: #1f2937;
-      --text-light: #111827;
-      --text-dark: #f9fafb;
+  <!-- Navigation Menu -->
+  <nav class="hidden md:flex">
+    <ul class="flex justify-center space-x-6 backdrop-blur-sm bg-[#53375e]/80 py-4 px-6 rounded-2xl border-1 border-gray transition-opacity">
+      <li>
+        <a href="#home" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-gray hover:scale-115">Home</a>
+      </li>
+      <li>
+        <a href="#about" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">About</a>
+      </li>
+      <li>
+        <a href="#projects" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Projects</a>
+      </li>
+      <li>
+        <a href="#contact" class="text-white/100 py-2 px-4 transition-all duration-300 hover:text-white hover:scale-105">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Menu Toggle Button for Small Screens -->
+  <button id="menu-toggle" class="md:hidden text-2xl">
+    ☰
+  </button>
+
+  <!-- Dark/Light Mode Toggle -->
+  <button id="theme-toggle" class="text-2xl">
+    🌞
+  </button>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-full bg-[#53375e] py-4 px-6 rounded-b-2xl border-1 border-gray z-50 hidden">
+  <!-- Close Button -->
+  <button id="menu-close" class="text-2xl absolute top-4 right-4 text-white">
+    ✕
+  </button>
+  <!-- Navigation Links -->
+  <ul class="flex flex-col space-y-6 mt-12">
+    <li>
+      <a href="#home" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">Home</a>
+    </li>
+    <li>
+      <a href="#about" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">About</a>
+    </li>
+    <li>
+      <a href="#projects" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">Projects</a>
+    </li>
+    <li>
+      <a href="#contact" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">Contact</a>
+    </li>
+  </ul>
+</div>
+
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const rootElement = document.documentElement;
+
+  toggleButton.addEventListener('click', () => {
+    if (rootElement.classList.contains('dark')) {
+      rootElement.classList.remove('dark');
+      toggleButton.textContent = '🌞'; // Icono de sol para el modo claro
+    } else {
+      rootElement.classList.add('dark');
+      toggleButton.textContent = '🌜'; // Icono de luna para el modo oscuro
     }
-  
-    html {
-      background-color: var(--background-light);
-      color: var(--text-light);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-  
-    html.dark {
-      background-color: var(--background-dark);
-      color: var(--text-dark);
-    }
-  
-    /* Additional styling for header and menu */
-    header {
-      margin: 0 auto;
-    }
-  
-    nav ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    nav a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
-  
+  });
+
+  const menuToggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuCloseButton = document.getElementById('menu-close');
+
+  menuToggleButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  menuCloseButton.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
+
+<style is:global>
+  /* Global styles for dark and light modes */
+  :root {
+    --background-light: #f9fafb;
+    --background-dark: #1f2937;
+    --text-light: #111827;
+    --text-dark: #f9fafb;
+  }
+
+  html {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+
+  /* Additional styling for header and menu */
+  header {
+    margin: 0 auto;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
