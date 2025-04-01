@@ -11,41 +11,76 @@
         <time class="text-sm font-normal text-gray-400 dark:text-gray-500">Jul 2024 - Sep 2024</time>
     </div>
 </a>
-    
-    <!-- Project 2: Fullstack Clinic App -->
-    <a  class="relative flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      
-      <!-- Slideshow container -->
-      <div class="relative w-full h-96 overflow-hidden rounded-t-lg">
-        <!-- Slides -->
-        <div id="carouselSlides" class="slide-container absolute inset-0 flex transition-transform duration-500 ease-in-out">
-          <img class="object-cover w-full h-full" src="/Projects/DrLeonWeb.webp" alt="Clinic App 1">
-          <img class="object-cover w-full h-full" src="/Projects/DrLeonWeb2.webp" alt="Clinic App 2">
-          <img class="object-cover w-full h-full" src="/Projects/DrLeonWeb3.webp" alt="Clinic App 3">
-        </div>
-  
-        <!-- Left arrow -->
-        <button id="prevSlide" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
-          &#10094;
-        </button>
-  
-        <!-- Right arrow -->
-        <button id="nextSlide" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-full hover:bg-gray-700 focus:outline-none">
-          &#10095;
-        </button>
+
+ <!-- Project 2: Fullstack Clinic App -->
+<a class="relative flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+  <!-- Carrusel simplificado -->
+  <div class="relative w-full h-96 overflow-hidden rounded-t-lg">
+    <div 
+      id="clinicCarousel"
+      class="flex h-full overflow-x-auto scroll-smooth snap-mandatory snap-x" 
+      style="scrollbar-width: none; -ms-overflow-style: none;"
+    >
+      <div class="min-w-full h-full snap-center">
+        <img 
+          class="w-full h-full object-cover" 
+          src="/Projects/DrLeonWeb.webp" 
+          alt="Clinic App 1"
+          loading="lazy"
+        >
       </div>
-  
-      <!-- Project Description -->
-      <div class="flex flex-col justify-between p-6 leading-normal">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Fullstack Clinic Management System</h5>
-        <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">
-          Developed a comprehensive web application for Dr. Leon’s clinic to enhance patient management, including medical records, clinical data, and appointment scheduling. Utilized MySQL, React, Vite, Node.js, and Express.
-        </p>
-        <time class="text-sm font-normal text-gray-400 dark:text-gray-500">Feb 2024 - Jul 2024</time>
+      <div class="min-w-full h-full snap-center">
+        <img 
+          class="w-full h-full object-cover" 
+          src="/Projects/DrLeonWeb2.webp" 
+          alt="Clinic App 2"
+          loading="lazy"
+        >
       </div>
-    </a>
+      <div class="min-w-full h-full snap-center">
+        <img 
+          class="w-full h-full object-cover" 
+          src="/Projects/DrLeonWeb3.webp" 
+          alt="Clinic App 3"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- Flechas de navegación simples -->
+    <button 
+      onclick="scrollCarousel(-1)"
+      class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-full hover:bg-gray-700"
+    >
+      ‹
+    </button>
+    <button 
+      onclick="scrollCarousel(1)"
+      class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-full hover:bg-gray-700"
+    >
+      ›
+    </button>
   </div>
 
+  <!-- Descripción del proyecto -->
+  <div class="flex flex-col justify-between p-6 leading-normal">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Fullstack Clinic Management System</h5>
+    <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">
+      Developed a comprehensive web application for Dr. Leon’s clinic to enhance patient management, including medical records, clinical data, and appointment scheduling. Utilized MySQL, React, Vite, Node.js, and Express.
+    </p>
+    <time class="text-sm font-normal text-gray-400 dark:text-gray-500">Feb 2024 - Jul 2024</time>
+  </div>
+</a>
+
+  <!-- Project 1: Orderer Life System -->
+  <a class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="w-full h-full object-cover rounded-t-lg" src="/Projects/OrdererLife.webp" alt="Orderer Life System">
+    <div class="flex flex-col justify-between p-6 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Orderer Life - Personal Automation System</h5>
+        <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">Designed a comprehensive life management system using Notion, Samsung Notes, and custom API integrations to automate task tracking, habit formation, and project management.</p>
+        <time class="text-sm font-normal text-gray-400 dark:text-gray-500">2021</time>
+    </div>
+</a>
 
 
     <!-- Project 3: Arbitrage Betting Application -->
@@ -57,6 +92,16 @@
             <time class="text-sm font-normal text-gray-400 dark:text-gray-500">Jan 2020 - Mar 2020</time>
         </div>
     </a>
+
+    <!-- Project 2: 3D Printed Tlaxcoapan Mill -->
+        <a class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="w-full h-full object-cover rounded-t-lg" src="/Projects/Molino3D.webp" alt="3D Printed Tlaxcoapan Mill">
+            <div class="flex flex-col justify-between p-6 leading-normal">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">3D Reconstruction of Tlaxcoapan Mill</h5>
+                <p class="mb-3 text-base font-normal text-gray-700 dark:text-gray-400">Created an accurate 3D model using SolidWorks based on historical photos and geometric analysis, resulting in 3D-printed keychains that promoted local cultural heritage.</p>
+                <time class="text-sm font-normal text-gray-400 dark:text-gray-500">2020</time>
+            </div>
+        </a>
 
     <!-- Project 4: Mobile Maintenance Unit -->
     <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
