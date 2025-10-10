@@ -35,27 +35,29 @@
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed top-0 left-0 w-full bg-[#53375e] py-4 px-6 rounded-b-2xl border-1 border-gray z-50 hidden">
+<div id="mobile-menu" class="fixed top-12 right-6 w-1/3 bg-[#1d1a22] dark:bg-[#251c2cbe] bg-opacity-95 py-4 px-6 rounded-b-3xl rounded-t-3xl  dark:border-gray-700 z-50 hidden">
   <!-- Close Button -->
-  <button id="menu-close" class="text-2xl absolute top-4 right-4 text-white">
-    ✕
-  </button>
+
   <!-- Navigation Links -->
-  <ul class="flex flex-col space-y-6 mt-12">
+  <ul class="flex flex-col space-y-6 mt-1">
     <li>
-      <a href="#home" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">Home</a>
+      <a href="#home" class="text-white dark:text-gray-300 py-2 px-4 transition-all duration-300 hover:text-gray-400 dark:hover:text-gray-500">Home</a>
     </li>
     <li>
-      <a href="#about" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">About</a>
+      <a href="#about" class="text-white dark:text-gray-300 py-2 px-4 transition-all duration-300 hover:text-gray-400 dark:hover:text-gray-500">About</a>
     </li>
     <li>
-      <a href="#projects" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">Projects</a>
+      <a href="#projects" class="text-white dark:text-gray-300 py-2 px-4 transition-all duration-300 hover:text-gray-400 dark:hover:text-gray-500">Projects</a>
     </li>
     <li>
-      <a href="#contact" class="text-white py-2 px-4 transition-all duration-300 hover:text-gray-300">Contact</a>
+      <a href="#contact" class="text-white dark:text-gray-300 py-2 px-4 transition-all duration-300 hover:text-gray-400 dark:hover:text-gray-500">Contact</a>
     </li>
   </ul>
 </div>
+
+<!-- Background Overlay when menu is open -->
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
 
 
 <script>
@@ -119,4 +121,21 @@
     text-decoration: none;
     font-weight: bold;
   }
+
+  /* Media query para pantallas menores a 768px (pantallas medianas y pequeñas) */
+@media (max-width: 768px) {
+  header {
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 1rem; /* Agrega espacio entre elementos en el encabezado */
+  }
+
+  #menu-toggle {
+    order: 2; /* Mueve el botón de menú hamburguesa a la derecha */
+  }
+
+  #theme-toggle {
+    order: 1; /* Mueve el botón de modo oscuro/claro al medio */
+  }
+}
+
 </style>
